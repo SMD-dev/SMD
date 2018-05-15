@@ -1752,7 +1752,8 @@ a:hover {
 
 strong,
 b {
-  font-weight: 400;
+  font-weight: 600;
+  color: #3fb1a3;
 }
 
 p,
@@ -1915,7 +1916,7 @@ textarea {
   -ms-appearance: none;
   appearance: none;
   background: none;
-  border: solid 1px rgba(124, 128, 129, 0.2);
+  border: solid 1px rgba(16, 16, 16, 0.22);
   color: inherit;
   display: block;
   padding: 0.75em;
@@ -1938,29 +1939,25 @@ input[type="email"] {
 }
 
 ::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: rgba(63, 63, 63, 0.527) !important;
   position: relative;
   top: 3px;
 }
 
 :-moz-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: rgba(63, 63, 63, 0.527) !important;
 }
 
 ::-moz-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: rgba(63, 63, 63, 0.527) !important;
 }
 
 :-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+  color: rgba(63, 63, 63, 0.527) !important;
 }
 
 .formerize-placeholder {
-  color: rgba(124, 128, 129, 0.5) !important;
+  color: rgba(63, 63, 63, 0.527) !important;
 }
 
 /* Image */
@@ -2619,6 +2616,7 @@ input[type="reset"].small,
   opacity: 0;
   padding: 3em;
   text-align: center;
+  font-weight: 300;
 }
 
 #banner .inner header {
@@ -2812,6 +2810,10 @@ body.index #main {
 
   #banner {
     background-attachment: scroll;
+    -moz-animation: reveal-banner 1s 0.25s ease-in-out;
+    -webkit-animation: reveal-banner 1s 0.25s ease-in-out;
+    -ms-animation: reveal-banner 1s 0.25s ease-in-out;
+    animation: reveal-banner 1s 0.25s ease-in-out;
   }
 
   /* CTA */
@@ -3334,9 +3336,9 @@ body.index #main {
   }
 
   #banner .inner {
-    background: none;
+    background: rgba(52, 27, 43, 0.5);
     display: block;
-    padding: 0 1.5em;
+    padding: 1.5em;
   }
 
   #banner .inner header h2 {
@@ -3407,7 +3409,9 @@ body.index #main {
 .logo {
 	width: 5em;
 	height: 3em;
-	top: 2em;
+  top: 5px;
+  left: 4em;
+  position: absolute;
 }
 
 .pricebox {
@@ -3432,4 +3436,8 @@ body.index #main {
 .client:hover {
 	background: url('') !important;
 	background-image: none !important;
+}
+
+.hidden {
+  visibility: hidden;
 }

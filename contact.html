@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<link rel="stylesheet" href="assets/css/animations.css" />
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118841177-1"></script>
 	<script>
@@ -17,16 +18,6 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-118841177-1');
-	</script>
-	<script>
-		sendEmail = () => {
-			var link = 'mailto:ryanprestonwalker@gmail.com?subject='
-				+ encodeURIComponent("This is my subject")
-				+ "&body="
-				+ encodeURIComponent("This is my body");
-
-			window.location.href = link;
-		}
 	</script>
 </head>
 
@@ -37,7 +28,8 @@
 		<header id="header">
 			<h1 id="logo">
 				<a href="index.html">
-					Superior Marketing & Design
+					<img src="./images/logo-white-bold.png" class="logo" alt="Superior Marketing & Design" />
+					<span class="hidden">Superior Marketing & Design</span>
 				</a>
 			</h1>
 			<nav id="nav">
@@ -53,7 +45,7 @@
 					</li>
 					</li>
 					<li>
-						<a href="contact.html" class="button special">Contact</a>
+						<a href="contact.html" class="button special pulse-button">Contact</a>
 					</li>
 				</ul>
 			</nav>
@@ -71,17 +63,17 @@
 			</header>
 
 			<!-- One -->
-			<section class="wrapper style4 special container 75%">
+			<section class="wrapper style4 special container 75%" style="box-shadow: 1px 1px 1px 2px #e2e2e2;">
 
 				<!-- Content -->
 				<div class="content">
-					<form>
+					<form action="https://formspree.io/ryanprestonwalker@gmail.com" method="POST">
 						<div class="row 50%">
 							<div class="6u 12u(mobile)">
 								<input type="text" name="name" placeholder="Name" />
 							</div>
 							<div class="6u 12u(mobile)">
-								<input type="text" name="email" placeholder="Email" />
+								<input type="text" name="_replyto" placeholder="Email" />
 							</div>
 						</div>
 						<div class="row 50%">
@@ -98,7 +90,7 @@
 							<div class="12u">
 								<ul class="buttons">
 									<li>
-										<input type="submit" class="special" id="email" value="Send Message" onclick="sendEmail()" />
+										<input type="submit" class="special" id="email" value="Send Message" />
 									</li>
 								</ul>
 							</div>
@@ -115,34 +107,34 @@
 
 			<ul class="icons">
 				<li>
-					<a href="#" class="icon circle fa-facebook">
+					<a href="https://www.facebook.com/Superior-Marketing-Design-1876795082352132/" class="icon circle fa-facebook">
 						<span class="label">Facebook</span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="icon circle fa-google-plus">
+					<a href="https://plus.google.com/u/2/100093421085331866993" class="icon circle fa-google-plus">
 						<span class="label">Google+</span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="icon circle fa-twitter">
+					<a href="https://www.facebook.com/Superior-Marketing-Design-1876795082352132/" class="icon circle fa-twitter">
 						<span class="label">Twitter</span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="icon circle fa-github">
+					<a href="https://github.com/SMD-dev" class="icon circle fa-github">
 						<span class="label">Github</span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="icon circle fa fa-linkedin">
+					<a href="https://www.linkedin.com/company/superior-marketing-design/" class="icon circle fa fa-linkedin">
 						<span class="label">LinkedIn</span>
 					</a>
 				</li>
 			</ul>
 
 			<ul class="copyright">
-				<li>&copy; Superior Marketing Design</li>
+				<li>&copy; Superior Marketing & Design</li>
 			</ul>
 
 		</footer>
