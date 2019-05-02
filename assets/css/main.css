@@ -3407,9 +3407,9 @@ body.index #main {
 }
 
 .logo {
-	width: 5em;
+	/* width: 5em; */
 	height: 3em;
-  top: 5px;
+  top: 4px;
   left: 4em;
   position: absolute;
 }
@@ -3440,4 +3440,8 @@ body.index #main {
 
 .hidden {
   visibility: hidden;
+}
+
+#header.alt img {
+  height: 14em;
 }

@@ -1,10 +1,6 @@
-/*
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
+	const css = 'text-shadow: -1px -1px hsl(125, 100%, 20%), 1px 1px hsl(125, 100%, 25%), 3px 2px hsl(125, 100%, 30%), 5px 3px hsl(125, 100%, 35%), 7px 4px hsl(125, 100%, 40%), 9px 5px hsl(125, 100%, 45%), 11px 6px hsl(125, 100%, 50%); font-size: 50px; color: rgb(203, 23, 47);';
+	console.log('%c SM&D ', css);
 
 	skel.breakpoints({
 		wide: '(max-width: 1680px)',
