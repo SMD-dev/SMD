@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Make A Payment - SMD</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<link rel="stylesheet" href="assets/css/animations.css" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118841177-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-118841177-1');
+	</script>
+	<style>
+		.payment-input {
+			text-align: center;
+		}
+		::-webkit-input-placeholder {
+			text-align: center;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+			text-align: center;
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+			text-align: center;
+		}
+
+		:-ms-input-placeholder {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body class="contact">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1 id="logo">
+				<a href="index.html">
+					<img src="./images/smd-logo.png" class="logo" alt="Superior Marketing & Design" />
+					<span class="hidden">Superior Marketing & Design</span>
+				</a>
+			</h1>
+			<nav id="nav">
+				<ul>
+					<li class="current">
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li>
+						<a href="clients.html">Examples</a>
+					</li>
+					<li>
+						<a href="pay.html">Make A Payment</a>
+					</li>
+					<li>
+						<a href="contact.html" class="button special pulse-button">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<article id="main">
+
+			<header class="special container">
+				<span class="icon fa-money"></span>
+				<h2>Make a Payment</h2>
+				<p>
+					For options other than paypal, email Caleb@SuperiorMarketingDesign.com
+				</p>
+			</header>
+
+			<!-- One -->
+			<section class="wrapper style4 special container 75%" style="box-shadow: 1px 1px 1px 2px #e2e2e2;">
+
+				<!-- Content -->
+				<div class="content">
+					<div class="12u" style="padding-bottom: 50px;">
+						<script>
+							function handlePaymentChange() {
+								window.paymentAmount = document.getElementById('payment').value;
+								console.log('payment', window.paymentAmount);
+							}
+						</script>
+						<span>Enter an amount before proceeding:</span>
+						<input class="payment-input" type="text" id="payment" name="payment" onchange="handlePaymentChange();" placeholder="10.00" />
+					</div>
+					<div id="paypal-button-container"></div>
+					<script src="https://www.paypal.com/sdk/js?client-id=AQkubKHpZcAXXWYzjOcVJAmF_5pllncePgUNvBe1J68BinXLlWr1P186s1kbWQxEyxeA5i-g9T_y3Bf7&currency=USD" data-sdk-integration-source="button-factory"></script>
+					<script>
+						paypal.Buttons({
+							style: {
+								shape: 'rect',
+								color: 'gold',
+								layout: 'vertical',
+								label: 'pay',
+
+							},
+							createOrder: function(data, actions) {
+								return actions.order.create({
+									purchase_units: [{
+										amount: {
+											value: window.paymentAmount
+										}
+									}]
+								});
+							},
+							onApprove: function(data, actions) {
+								return actions.order.capture().then(function(details) {
+									alert('Transaction completed by ' + details.payer.name.given_name + '!');
+								});
+							}
+						}).render('#paypal-button-container');
+					</script>
+				</div>
+
+			</section>
+
+		</article>
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<ul class="icons">
+				<li>
+					<a href="https://www.facebook.com/Superior-Marketing-Design-1876795082352132/" class="icon circle fa-facebook">
+						<span class="label">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://plus.google.com/u/2/100093421085331866993" class="icon circle fa-google-plus">
+						<span class="label">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/Superior-Marketing-Design-1876795082352132/" class="icon circle fa-twitter">
+						<span class="label">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/SMD-dev" class="icon circle fa-github">
+						<span class="label">Github</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/company/superior-marketing-design/" class="icon circle fa fa-linkedin">
+						<span class="label">LinkedIn</span>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="copyright">
+				<li>&copy; Superior Marketing & Design</li>
+			</ul>
+
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollgress.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
