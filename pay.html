@@ -92,7 +92,7 @@
 					<div class="12u" style="padding-bottom: 50px;">
 						<script>
 							function handlePaymentChange() {
-								window.paymentAmount = document.getElementById('payment').value;
+								window.paymentAmount = document.getElementById('payment').value.replace(/\$/g,'');
 								console.log('payment', window.paymentAmount);
 							}
 						</script>

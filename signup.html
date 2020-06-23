@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Sign Up - Hosting</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118841177-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-118841177-1');
+	</script>
+	<style>
+        * {
+            box-sizing: border-box;
+        }
+        .flex {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .marketing-wrapper {
+            color: #2f3337;
+            text-align: center;
+        }
+        .header-wrapper {
+            background-color: #22C0FF;
+            padding: 8px;
+            padding-bottom: 128px;
+            width: 100%;
+        }
+        .header-logo {
+            width: 128px;
+        }
+        .title {
+            font-size: 24px;
+            margin: 24px 0;
+        }
+        .images-wrapper {
+            width: 100%;
+        }
+        .curvy-svg {
+            fill: #22C0FF;
+            margin-top: -1px;
+        }
+        .laptop-image {
+            position: absolute;
+            width: 256px;
+        }
+        .three-image-wrapper {
+            align-items: flex-start;
+            margin: 128px 0;
+            padding: 25px;
+        }
+        .three-image-wrapper p {
+            text-align: left;
+        }
+        .three-image-wrapper h3 {
+            margin: 8px;
+        }
+        .three-image-article {
+            margin: 25px;
+            text-align: center;
+            width: 300px;
+        }
+        .three-image-img {
+            width: 250px;
+        }
+        .icon {
+            color: #22C0FF;
+            font-size: 3.25em;
+        }
+        .button {
+            border-radius: 4px;
+            bottom: 0;
+            height: 52px;
+            max-width: none;
+            min-width: auto;
+            padding: 0 24px;
+            width: 300px;
+        }
+        .input {
+            border: none;
+            border-radius: 4px;
+            height: 52px;
+            padding: 0 24px;
+            margin: 8px;
+            width: 300px;
+        }
+
+        /* @sm: ~"(min-width: 576px)"; // Small devices (landscape phones, 576px and up)
+        @md: ~"(min-width: 768px)"; // Medium devices (tablets, 768px and up)
+        @lg: ~"(min-width: 992px)"; // Large devices (desktops, 992px and up)
+        @xl: ~"(min-width: 1200px)"; // Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 576px) {
+            .laptop-image {
+                width: 512px;
+            }
+            .button {
+                width: auto;
+            }
+        }
+        @media (min-width: 768px) {
+            .header-wrapper {
+                padding: 8px 64px 128px;
+            }
+            .three-image-wrapper {
+                flex-direction: row;
+            }
+        }
+	</style>
+</head>
+
+<body>
+    <main class="marketing-wrapper flex">
+        <div class="header-wrapper flex">
+            <img src="./images/smd-logo.png" class="header-logo" alt="Superior Marketing & Design logo" />
+            <h1 class="title">Host Your Website, Care Free!</h1>
+            <h3>We'll take care of everything- from transferring to managing.</h3>
+            <div>
+                <input class="input" placeholder="Enter your email address" />
+                <button class="button">Get Started</button>
+            </div>
+            <!-- <p>try for free, blah dee dah</p> -->
+        </div>
+        <div class="flex images-wrapper">
+            <svg class="curvy-svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><title>fancy background</title><path d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z" /></svg>
+            <img
+                alt="Laptop displaying your beautiful site"
+                class="laptop-image"
+                src="./images/smd-marketing-laptop-compressed.png"
+            />
+        </div>
+        <section>
+            <div class="flex three-image-wrapper">
+                <article class="three-image-article">
+                    <span class="icon fa-laptop"></span>
+                    <h3>Zero Maintenance</h3>
+                    <p>We will take care of everything.  We will transfer the website for you and maintain it so you never have to worry about the hassles that come with maintaining websites.</p>
+                </article>
+                <article class="three-image-article">
+                    <span class="icon fa-money"></span>
+                    <h3>Competitive Prices</h3>
+                    <p>We are a small business and thus have made our prices more affordable than anything available on the market.  Lock your price in now!</p>
+                </article>
+                <article class="three-image-article">
+                    <span class="icon fa-bar-chart-o"></span>
+                    <h3>Unlimited Storage</h3>
+                    <p>We offer unlimited storage and guarantee site performance.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+	<!-- Scripts -->
+	<script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.colorbox.min.js"></script>
+    <script>
+        $(() => {
+            $('.button').colorbox({ html: "<h1>Helllooooo</h1>"});
+        });
+    </script>
+</body>
+
+</html>
