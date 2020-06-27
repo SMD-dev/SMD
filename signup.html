@@ -14,8 +14,17 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-118841177-1');
-	</script>
-	<style>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <style>
+        :root {
+            --main-bg-color: #22C0FF;
+            --main-black-color: #2f3337;
+        }
         * {
             box-sizing: border-box;
         }
@@ -26,11 +35,11 @@
             justify-content: center;
         }
         .marketing-wrapper {
-            color: #2f3337;
+            color: var(--main-black-color);
             text-align: center;
         }
         .header-wrapper {
-            background-color: #22C0FF;
+            background-color: var(--main-bg-color);
             padding: 8px;
             padding-bottom: 128px;
             width: 100%;
@@ -46,7 +55,7 @@
             width: 100%;
         }
         .curvy-svg {
-            fill: #22C0FF;
+            fill: var(--main-bg-color);
             margin-top: -1px;
         }
         .laptop-image {
@@ -55,7 +64,7 @@
         }
         .three-image-wrapper {
             align-items: flex-start;
-            margin: 128px 0;
+            margin-top: 128px;
             padding: 25px;
         }
         .three-image-wrapper p {
@@ -73,17 +82,25 @@
             width: 250px;
         }
         .icon {
-            color: #22C0FF;
+            color: var(--main-bg-color);
             font-size: 3.25em;
         }
         .button {
+            background-color: #fff;
             border-radius: 4px;
             bottom: 0;
             height: 52px;
             max-width: none;
             min-width: auto;
             padding: 0 24px;
+            transition: all 0.2s;
             width: 300px;
+        }
+        .button:hover {
+            background: #fff;
+            border-color: var(--main-black-color);
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
+            color: var(--main-black-color);
         }
         .input {
             border: none;
@@ -93,6 +110,21 @@
             margin: 8px;
             width: 300px;
         }
+
+        /* FANCY BOX START */
+        input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: var(--main-bg-color);
+        }
+        input[type="submit"].special {
+            background: var(--main-bg-color);
+            border-color: var(--main-bg-color);
+            /* color: var(--main-black-color) !important; */
+        }
+        input[type="submit"].special:hover {
+            background: #64d3ff !important;
+            border-color: #64d3ff !important;
+        }
+        /* FANCY BOX END */
 
         /* @sm: ~"(min-width: 576px)"; // Small devices (landscape phones, 576px and up)
         @md: ~"(min-width: 768px)"; // Medium devices (tablets, 768px and up)
@@ -123,11 +155,39 @@
             <img src="./images/smd-logo.png" class="header-logo" alt="Superior Marketing & Design logo" />
             <h1 class="title">Host Your Website, Care Free!</h1>
             <h3>We'll take care of everything- from transferring to managing.</h3>
-            <div>
-                <input class="input" placeholder="Enter your email address" />
-                <button class="button">Get Started</button>
+            <button class="button" data-fancybox data-src="#fancybox-content">Get Started</button>
+            <div style="display: none;" id="fancybox-content">
+                <p>Fill out the form to get in contact!</p>
+                <form action="https://formspree.io/calebjhutch@gmail.com" method="POST">
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)">
+                            <input type="text" name="name" placeholder="Name" />
+                        </div>
+                        <div class="6u 12u(mobile)">
+                            <input type="text" name="_replyto" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="row 50%">
+                        <div class="12u">
+                            <input type="text" name="subject" placeholder="Subject" />
+                        </div>
+                    </div>
+                    <div class="row 50%">
+                        <div class="12u">
+                            <textarea name="message" placeholder="Message" rows="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <ul class="buttons">
+                                <li style="width: 100%">
+                                    <input type="submit" class="special" style="width: 100%" id="email" value="Send Message" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <!-- <p>try for free, blah dee dah</p> -->
         </div>
         <div class="flex images-wrapper">
             <svg class="curvy-svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><title>fancy background</title><path d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z" /></svg>
@@ -156,15 +216,8 @@
                 </article>
             </div>
         </section>
+        <button class="button" data-fancybox data-src="#fancybox-content" style="margin-bottom: 64px;">Get Started</button>
     </main>
-	<!-- Scripts -->
-	<script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/jquery.colorbox.min.js"></script>
-    <script>
-        $(() => {
-            $('.button').colorbox({ html: "<h1>Helllooooo</h1>"});
-        });
-    </script>
 </body>
 
 </html>
