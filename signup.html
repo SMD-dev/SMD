@@ -112,7 +112,7 @@
         }
 
         /* FANCY BOX START */
-        input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+        input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="email"]:focus, textarea:focus {
             border-color: var(--main-bg-color);
         }
         input[type="submit"].special {
@@ -152,7 +152,9 @@
 <body>
     <main class="marketing-wrapper flex">
         <div class="header-wrapper flex">
-            <img src="./images/smd-logo.png" class="header-logo" alt="Superior Marketing & Design logo" />
+            <a href="/" style="border: none">
+                <img src="./images/smd-logo.png" class="header-logo" alt="Superior Marketing & Design logo" />
+            </a>
             <h1 class="title">Host Your Website, Care Free!</h1>
             <h3>We'll take care of everything- from transferring to managing.</h3>
             <button class="button" data-fancybox data-src="#fancybox-content">Get Started</button>
@@ -164,12 +166,12 @@
                             <input type="text" name="name" placeholder="Name" />
                         </div>
                         <div class="6u 12u(mobile)">
-                            <input type="text" name="_replyto" placeholder="Email" />
+                            <input type="tel" name="phone" placeholder="Phone" />
                         </div>
                     </div>
                     <div class="row 50%">
                         <div class="12u">
-                            <input type="text" name="subject" placeholder="Subject" />
+                            <input type="text" name="_replyto" placeholder="Email" />
                         </div>
                     </div>
                     <div class="row 50%">
